@@ -32,16 +32,24 @@ class Vector():
         elif (type(a) is Vector):
             debounce = False
             while (debounce == False):
-                input1 = input("What method would you like?\n   (1) Cross-Product\n   (2) Dot-Product")
-                if (input1 == 1):
+                user_input = input("What method would you like?\n   (1) Cross-Product\n   (2) Dot-Product\n>")
+                if (int(user_input) == 1):
                     debounce = True
                     print('Cross')
-                elif (input1 == 2):
+                elif (int(user_input) == 2):
                     debounce = True
-                    print('Dot')
+                    # print('Dot')
                 else:
                     debounce = False
-                    print("The method you inputted was incorrect")
+                    print("The method you inputted was incorrect!\n")
+                    user_input = input("Would you like to retry?\n    (1) Y\n    (2) N\n>")
+                    if (not user_input.isdigit()):
+                        return
+                    if (int(user_input) == 2):
+                        return
+                    else:
+                        print("\n\n\n")
+                        pass
         
 v = Vector(3, 4)
 v * v
