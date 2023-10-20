@@ -24,9 +24,10 @@ def caculate(x : int, y : int, method : str):
 
 class Vector():
     def __init__(self, x : int, y : int):
-        self.x = x
-        self.y = y
-        self.m = math.sqrt((x**x) + (y**y))
+        self.direction = {'x': x, 'y': y}
+        self.magnitude = math.sqrt(((x*x) + (y*y)))
+    def __call__(self):
+        print("Your vector is:\n" + "Direction: <" + str(self.direction['x']) + ", " + str(self.direction['y']) + ">" + "\nMagnitude: " + str(self.magnitude))
         
 v = Vector(3, 4)
-print(v.m)
+v()
