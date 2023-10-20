@@ -54,3 +54,11 @@ print("\n")
 print(vTwo * 5)
 print("\n")
 vOne * vTwo
+
+# Loop stuff
+someVectors = [twoDimensionalVector(1, 5), twoDimensionalVector(7, -9), twoDimensionalVector(5, 6), twoDimensionalVector(-6, 7)]
+for v in someVectors:
+    print("\n")
+    v.info()
+    print("\n")
+    
