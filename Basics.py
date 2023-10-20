@@ -30,7 +30,18 @@ class Vector():
             return {"direction": d, "magnitude": m}
         
         elif (type(a) is Vector):
-            print("YES!")
-    
+            debounce = False
+            while (debounce == False):
+                input1 = input("What method would you like?\n   (1) Cross-Product\n   (2) Dot-Product")
+                if (input1 == 1):
+                    debounce = True
+                    print('Cross')
+                elif (input1 == 2):
+                    debounce = True
+                    print('Dot')
+                else:
+                    debounce = False
+                    print("The method you inputted was incorrect")
         
 v = Vector(3, 4)
+v * v
