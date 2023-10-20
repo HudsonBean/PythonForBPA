@@ -2,7 +2,7 @@
 import math
 
 
-def caculate(x : int, y : int, method : str):
+def calculate(x : int, y : int, method : str):
     if method == "add":
         return x+y
     elif method == "subtract":
@@ -16,7 +16,7 @@ def caculate(x : int, y : int, method : str):
     else:
         return "Sorry the method you provided is invalid! Please try again."
 
-class Vector():
+class twoDimensionalVector():
     def __init__(self, x : int, y : int):
         self.direction = {'x': x, 'y': y}
         self.magnitude = math.sqrt(((x*x) + (y*y)))
@@ -29,27 +29,28 @@ class Vector():
             x = self.direction['x'] * a
             y = self.direction['y'] * a
             return self.__cv(x,y)
-        elif (type(a) is Vector):
-            print("Attempting to multiply a vector by a vector! Use the .dotProduct or crossProduct function to multiply vectors.")
-            return self
+        elif (type(a) is twoDimensionalVector):
+            print("Attempting to multiply a vector by a vector! Use the .dotProduct function to multiply vectors.")
+            return
     def info(self):
-        print("Your vector is:\n" + "Direction: <" + str(self.direction['x']) + ", " + str(self.direction['y']) + ">" + "\nMagnitude: " + str(self.magnitude))
-        aOne = self.direction['x']
-        aTwo = self.direction['y']
-        
-        bOne = v.direction['x']
-        bTwo = v.direction['y']
-        
-        i = (aOne*bTwo)
-        j = ((bOne*aTwo)*-1)
-        
-        return self.__cv(i,j)
+        print("Your vector is:\n" + "Direction: <" + str(self.direction['x']) + ", " + str(self.direction['y']) + ">" + "\nMagnitude: " + str(self.magnitude))  
     def dotProduct(self, v):
         x = self.direction['x']*v.direction['x']
         y = self.direction['y']*v.direction['y']
         return x+y
         
         
-v = Vector(3, 4)
-vTwo = Vector(8,1)
-print(v.dotProduct(vTwo))
+a = 4
+b = 8
+vOne = twoDimensionalVector(calculate(a, b, 'add'), calculate(a, b, 'divide'))
+vTwo = twoDimensionalVector(calculate(a, b, "multiply"), calculate(a, b, "subtract"))
+print("\n\n\n")
+vOne.info()
+print("\n")
+vTwo.info()
+print("\n\n\n")
+print(vOne.dotProduct(vTwo))
+print("\n")
+print(vTwo * 5)
+print("\n")
+vOne * vTwo
