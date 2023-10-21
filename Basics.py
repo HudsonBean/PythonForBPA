@@ -61,4 +61,38 @@ for v in someVectors:
     print("\n")
     v.info()
     print("\n")
-    
+
+
+# Show inheritance and polymorphism
+class Vehicle():
+    def __init__(self, name, color, position):
+        self.name = name
+        self.color = color
+        self.position = position
+    def __call__(self):
+        print("WOOHOO! I AM A " + str.upper(self.name))
+    def move(self):
+        pass
+class Car(Vehicle):
+    def __init(self, name, color, position):
+        super().__init__(self, name, color, position)
+    def move(self):
+        print("DRIVE TIME!")
+class Boat(Vehicle):
+    def __init(self, name, color, position):
+        super().__init__(self, name, color, position)
+    def move(self):
+        print("SAIL TIME!")
+class Plane(Vehicle):
+    def __init(self, name, color, position):
+        super().__init__(self, name, color, position)
+    def move(self):
+        print("FLY TIME!")
+        
+c = Car("Ford", "White", {'x':5, 'y':2})
+b = Boat("Cobalt", "Blue", {'x':-37, 'y':0})
+p = Plane("Embraer", "Black", {'x':-58, 'y':186})
+
+for v in (c, b, p):
+    v()
+    v.move()
