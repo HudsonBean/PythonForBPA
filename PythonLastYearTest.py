@@ -1,8 +1,7 @@
-# Needs 3 dials
-# Each dial has 0-9
-
+#Imports
 import random
 
+# Version 1.0
 def getRandomCombination():
     # Get dial ammount and combinations ammount
     DIAL_AMMOUNT = int(input("Each lock has how many dials?\n> "))
@@ -19,3 +18,5 @@ def getRandomCombination():
         i+=1 # Increase for next set of combinations
     return Ans
 print(getRandomCombination())
+
+# Version 2.0
