@@ -2,7 +2,6 @@
 # Each dial has 0-9
 
 import random
-from array import *
 
 def getRandomCombination():
     # Get dial ammount and combinations ammount
